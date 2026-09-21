@@ -17,7 +17,7 @@
 
     audioContext = audioContext || new AudioCtx();
     master = audioContext.createGain();
-    master.gain.value = 0.150;
+    master.gain.value = 0.40;
     master.connect(audioContext.destination);
 
     const tones = [55, 82.41, 110];
