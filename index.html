@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Detective — O Arquivo Fantasma</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">⌁</div>
+        <div>
+          <h1>CYBER <span>DETECTIVE</span></h1>
+          <small>FORGE STUDIOS // NEXUS INVESTIGATION SYSTEM</small>
+        </div>
+      </div>
+      <div class="top-status">
+        <span class="status-dot"></span>
+        <span>SISTEMA ONLINE</span>
+      </div>
+    </header>
+
+    <main id="app">
+      <section id="screen-menu" class="screen active">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">CASO #001 // CLASSIFICAÇÃO: RESTRITA</p>
+            <h2>O ARQUIVO<br /><span>FANTASMA</span></h2>
+            <p class="hero-description">
+              Uma sessão legítima. Um arquivo desaparecido. Três suspeitos.
+              Descubra o que aconteceu em Neo-Caxias.
+            </p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" id="btn-start">INICIAR INVESTIGAÇÃO ↗</button>
+              <button class="btn btn-ghost" id="btn-how">COMO JOGAR</button>
+            </div>
+            <div class="feature-row">
+              <span>⌘ ENIGMAS</span>
+              <span>◈ EVIDÊNCIAS</span>
+              <span>⚡ XP & NÍVEIS</span>
+            </div>
+          </div>
+          <div class="hero-terminal panel">
+            <div class="panel-header">
+              <span><i class="window-dot red"></i><i class="window-dot yellow"></i><i class="window-dot green"></i></span>
+              <span>nexus_boot.log</span>
+              <span>v2.087</span>
+            </div>
+            <div class="terminal-body">
+              <p class="muted">[NEXUS CORE INITIALIZING...]</p>
+              <p class="success">[OK] Neural grid connected.</p>
+              <p class="success">[OK] Investigation module loaded.</p>
+              <p class="warning">[WARN] Integrity breach detected.</p>
+              <p class="danger">[ALERT] OMEGA_CORE unavailable.</p>
+              <p class="muted">Last access: 23:47:12</p>
+              <p class="cursor-line">_ Awaiting investigator...</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-note">© 2087 NEXUS INTELLIGENCE // FICÇÃO INTERATIVA — FORGE STUDIOS</div>
+      </section>
+
+      <section id="screen-how" class="screen">
+        <div class="narrow panel content-panel">
+          <p class="eyebrow">PROTOCOLO DE TREINAMENTO</p>
+          <h2>Como jogar</h2>
+          <div class="how-grid">
+            <div><strong>01</strong><h3>Explore</h3><p>Leia os diálogos e consulte os terminais para encontrar informações.</p></div>
+            <div><strong>02</strong><h3>Analise</h3><p>Compare horários, registros e depoimentos. Nem toda coincidência é uma prova.</p></div>
+            <div><strong>03</strong><h3>Resolva</h3><p>Complete os enigmas para desbloquear novas evidências e ganhar XP.</p></div>
+            <div><strong>04</strong><h3>Conclua</h3><p>Monte sua teoria e apresente uma conclusão no final do caso.</p></div>
+          </div>
+          <button class="btn btn-primary" id="btn-back-menu">VOLTAR AO MENU</button>
+        </div>
+      </section>
+
+      <section id="screen-game" class="screen">
+        <div class="game-layout">
+          <aside class="sidebar panel">
+            <div class="profile-block">
+              <div class="avatar">GD</div>
+              <div>
+                <h3 id="player-name">Investigador</h3>
+                <p id="player-rank">Recruta Digital</p>
+              </div>
+            </div>
+            <div class="xp-box">
+              <div class="stat-line"><span>XP</span><strong id="xp-text">0 / 500</strong></div>
+              <div class="xp-track"><div id="xp-bar"></div></div>
+              <div class="stat-line"><span>NÍVEL</span><strong id="level-text">01</strong></div>
+            </div>
+            <nav class="side-nav">
+              <button class="nav-btn active" data-view="briefing">▣ Briefing</button>
+              <button class="nav-btn" data-view="terminal">⌘ Terminal</button>
+              <button class="nav-btn" data-view="evidence">◈ Evidências <b id="evidence-count">0</b></button>
+              <button class="nav-btn" data-view="suspects">♙ Suspeitos</button>
+              <button class="nav-btn" data-view="case">⚑ Caso</button>
+            </nav>
+            <button class="btn btn-danger btn-small" id="btn-reset">REINICIAR CASO</button>
+          </aside>
+
+          <section class="main-panel">
+            <div class="mobile-title">
+              <span>CASO #001</span>
+              <strong>O ARQUIVO FANTASMA</strong>
+            </div>
+
+            <div id="view-briefing" class="game-view active-view">
+              <div class="section-heading">
+                <div><p class="eyebrow">NEXUS // TRANSMISSÃO PRIORITÁRIA</p><h2>Prólogo: A mensagem</h2></div>
+                <span class="tag warning-tag">INVESTIGAÇÃO ABERTA</span>
+              </div>
+              <div class="story-card panel">
+                <div class="story-meta">23:52 — CENTRAL DE INVESTIGAÇÕES DIGITAIS</div>
+                <p>O terminal desperta em meio à chuva de Neo-Caxias. Uma solicitação de emergência aparece na tela.</p>
+                <div class="message-box">
+                  <p class="success">[NEXUS ALERT]</p>
+                  <p>Violação de segurança detectada.</p>
+                  <p>Projeto: OMEGA</p>
+                  <p>Arquivo principal: indisponível</p>
+                  <p>Último acesso: 23:47:12</p>
+                  <p class="danger">Integridade dos registros: comprometida.</p>
+                </div>
+                <p>Antes que você possa responder, uma segunda mensagem surge:</p>
+                <blockquote>“Se você está lendo isso, significa que eles já sabem que você está investigando.”</blockquote>
+                <p>A NEXUS solicita um investigador externo. Você aceita o caso.</p>
+              </div>
+              <div class="mission-card">
+                <div><span class="eyebrow">OBJETIVO ATUAL</span><h3>Acesse o terminal e examine os registros da noite.</h3></div>
+                <button class="btn btn-primary" id="btn-go-terminal">ABRIR TERMINAL ↗</button>
+              </div>
+            </div>
+
+            <div id="view-terminal" class="game-view">
+              <div class="section-heading">
+                <div><p class="eyebrow">NEXUS // CONSOLE DE AUDITORIA</p><h2>Terminal fictício</h2></div>
+                <span class="tag">R-INVEST-001</span>
+              </div>
+              <div class="terminal panel large-terminal">
+                <div class="panel-header"><span>nexus-shell</span><span>SIMULATION MODE</span></div>
+                <div id="terminal-output" class="terminal-output">
+                  <p class="success">NEXUS SHELL v2.087</p>
+                  <p>Digite <b>help</b> para consultar os comandos disponíveis.</p>
+                </div>
+                <form id="terminal-form" class="terminal-form">
+                  <span class="prompt">guest@nexus:~$</span>
+                  <input id="terminal-input" autocomplete="off" placeholder="Digite um comando..." />
+                </form>
+              </div>
+              <div class="quick-commands">
+                <button class="chip" data-command="help">help</button>
+                <button class="chip" data-command="logs">logs</button>
+                <button class="chip" data-command="suspects">suspects</button>
+                <button class="chip" data-command="evidence">evidence</button>
+                <button class="chip" data-command="clear">clear</button>
+              </div>
+              <div class="puzzle panel">
+                <div class="section-heading"><div><p class="eyebrow">ENIGMA 01</p><h3>A chave do terminal</h3></div><span class="tag">+50 XP</span></div>
+                <p>O treinamento do sistema apresenta a chave: <b>3 - 1 - 19 - 5</b>. Usando A=1, B=2, C=3... Z=26, qual palavra é formada?</p>
+                <form id="riddle-form" class="answer-form">
+                  <input id="riddle-input" required placeholder="Digite a palavra..." />
+                  <button class="btn btn-primary" type="submit">VALIDAR</button>
+                </form>
+                <p id="riddle-feedback" class="feedback"></p>
+              </div>
+            </div>
+
+            <div id="view-evidence" class="game-view">
+              <div class="section-heading"><div><p class="eyebrow">ARQUIVO DE INVESTIGAÇÃO</p><h2>Central de evidências</h2></div><span class="tag" id="evidence-total">0 COLETADAS</span></div>
+              <div id="evidence-list" class="cards-grid"></div>
+            </div>
+
+            <div id="view-suspects" class="game-view">
+              <div class="section-heading"><div><p class="eyebrow">PESSOAS DE INTERESSE</p><h2>Suspeitos</h2></div></div>
+              <div class="cards-grid">
+                <article class="info-card panel"><div class="person-icon">AF</div><h3>Alex Ferreira</h3><span class="tag">Desenvolvedor</span><p>Estava corrigindo um módulo do sistema. Conhece profundamente a arquitetura do OMEGA.</p><p class="muted">Segredo: descobriu alterações não documentadas.</p></article>
+                <article class="info-card panel"><div class="person-icon">MT</div><h3>Maya Torres</h3><span class="tag">Analista de dados</span><p>Preparou uma cópia de segurança após encontrar inconsistências.</p><p class="muted">Segredo: guardou dados que não estavam mais no servidor.</p></article>
+                <article class="info-card panel"><div class="person-icon">RN</div><h3>Ravi Nascimento</h3><span class="tag">Administrador de rede</span><p>Iniciou uma manutenção automática pouco antes do acesso ao arquivo.</p><p class="muted">Segredo: um alerta foi desativado temporariamente.</p></article>
+                <article class="info-card panel"><div class="person-icon">HD</div><h3>Helena Duarte</h3><span class="tag">Diretora da NEXUS</span><p>Autorizou uma revisão interna do Projeto OMEGA.</p><p class="muted">Segredo: a revisão não foi comunicada a toda a equipe.</p></article>
+              </div>
+            </div>
+
+            <div id="view-case" class="game-view">
+              <div class="section-heading"><div><p class="eyebrow">STATUS DA OPERAÇÃO</p><h2>Resumo do caso</h2></div></div>
+              <div class="case-summary panel">
+                <h3>O Arquivo Fantasma</h3>
+                <p>Seu objetivo é entender o acesso ao OMEGA_CORE e distinguir fatos comprovados de suspeitas.</p>
+                <div class="summary-stats">
+                  <div><strong id="summary-xp">0</strong><span>XP conquistado</span></div>
+                  <div><strong id="summary-evidence">0</strong><span>Evidências</span></div>
+                  <div><strong id="summary-level">1</strong><span>Nível atual</span></div>
+                </div>
+                <h3>Próxima etapa</h3>
+                <p id="case-next">Acesse o terminal e resolva o primeiro enigma.</p>
+                <button class="btn btn-primary" id="btn-case-action">CONTINUAR INVESTIGAÇÃO ↗</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
