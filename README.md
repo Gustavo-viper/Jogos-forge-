@@ -1,15 +1,23 @@
-# Cyber Detective — Caso #001: O Arquivo Fantasma
+# Cyber Detective — Campanha Completa
 
-Protótipo jogável local da Forge Studios.
+Jogo offline em HTML, CSS e JavaScript puro.
 
-## Como executar
-1. Extraia os arquivos.
-2. Abra `index.html` no navegador.
-3. Para uma experiência melhor, use a extensão Live Server do VS Code.
+## Conteúdo
+- 7 casos jogáveis:
+  1. O Arquivo Fantasma
+  2. O Cofre de Vidro
+  3. A Cidade Sem Sinal
+  4. O Perfil Duplicado
+  5. O Código da Estação
+  6. O Último Backup
+  7. Arquivos da Sombra — final da campanha
+- Terminal fictício com comandos.
+- Enigmas e validação de respostas.
+- Evidências, suspeitos, XP, níveis e progresso salvo no navegador.
+- Interface responsiva para computador e celular.
 
-## Arquivos
-- `index.html`: estrutura das telas.
-- `style.css`: interface futurista e responsiva.
-- `app.js`: navegação, terminal, enigma, XP, evidências e progresso.
+## Executar
+Extraia o ZIP e abra `index.html` no navegador. Para uma experiência melhor, use Live Server no VS Code.
 
-Observação: esta versão salva o progresso apenas enquanto a página está aberta. Não há integração com Supabase ainda.
+## Limitações
+Esta versão é local e offline. Não possui login, servidor, banco de dados, multiplayer ou integração com Supabase.
